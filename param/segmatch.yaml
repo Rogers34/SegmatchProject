@@ -1,0 +1,60 @@
+#load cloud
+# file_directory: "../data/0/"
+# map_name: "highway-0-0814"
+# source_number: 65
+# target_number: 1
+
+# file_directory: "../data/1/"
+# map_name: "highway-1-0814"
+# source_number: 146
+file_directory: "/home/rogers/yj_ws/pcap_nav_map/data/1/short/"
+map_name: "highway-1-0829"
+source_number: 50
+target_number: 1
+
+#filter cloud
+voxel_grid_leaf_size: 0.1
+voxel_grid_points_per_voxles: 1
+outlier_removal_mean_k: 10
+outlier_removal_dev_threshold: 5.0
+
+#segment cloud
+segmenter_type: "EuclideanSegmenter" 
+# segmenter_type: "RegionGrowingSegmenter"
+rg_min_cluster_size: 50
+rg_max_cluster_size: 150000
+rg_knn_for_normals: 100
+rg_knn_for_growing: 30
+rg_smoothness_threshold_deg: 4.0
+rg_curvature_threshold: 0.05
+rg_radius_for_normals: 0.5
+
+ec_tolerance: 0.5
+ec_min_cluster_size: 50
+ec_max_cluster_size: 150000
+
+#find candidate
+segment_per_map:  20
+# knn_number: 50
+knn_number: 200
+min_confidence: 0.65
+min_distance: 2.0
+# min_distance: 1.0
+
+#filter matches
+geometric_consistency_GCsize: 0.4
+geometric_consistency_GCThreshold:  3
+
+#train rtrees
+# input_rtrees_name: "highway0809-rtrees.xml"
+# output_rtrees_name: "highway0809-rtrees.xml"
+# input_rtrees_name: "highway-1-0813-rtrees.xml"
+# output_rtrees_name: "highway-1-0813-rtrees.xml"
+input_rtrees_name: "/home/rogers/yj_ws/pcap_nav_map/data/1/highway-0-0814-rtrees.xml"
+output_rtrees_name: "/home/rogers/yj_ws/pcap_nav_map/data/1/highway-0-0814-rtrees.xml"
+
+
+
+
+
+
